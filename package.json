@@ -1,5 +1,5 @@
 {
-	"name": "nodules",
+	"name": "cpm",
 	"author": "Kris Zyp",
 	"dependencies": [],
 	"contributors": [],
@@ -10,12 +10,9 @@
 		"reload"
 	],
 	"engines": {"node":">=0.1.90"},
-	"githubName": "nodules",
+	"githubName": "cpm",
 	"type": "zip",
-	"main":"./lib/nodules",
+	"main":"./lib/cpm",
 	"version":"0.1.0",
-	"bin" : { 
-		"nodules" : "./cli.js" 
-	},
-	"location": "http://github.com/kriszyp/nodules/zipball/master"
+	"location": "http://github.com/kriszyp/cpm/zipball/master"
 }
