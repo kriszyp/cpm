@@ -14,10 +14,26 @@ can also modify the registry URL in the startup script as well.
 # Usage
 
 The main use of CPM is to install packages. To install a package, go to the directory
-where you want to install yours packages and run:
+where your JavaScript is stored and where you want your packages to be installed and run:
 
     cpm install package-to-install
 
+The packages will be downloaded and unzipped into a "packages" sub-directory. CPM
+will also create a "packages.js" script that can be used to configure your module loader.
+For example, with RequireJS you can load a module from a package like this:
+
+    <script src="js/packages/requirejs/require.js"></script>
+    <script>
+      // indicate the base URL:
+      require({baseUrl:"js"});
+      // load the packages.js configuration
+      require(["packages"],function(){
+      	// once loaded and executed, we can now use standard package/module naming:
+        require(["some-package/some-module"]);
+  	  });
+    </script>
+    
 You can also indicate the desired version to install with a second parameter:
 
     cpm install package-to-install 1.2.2
+
