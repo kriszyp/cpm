@@ -37,3 +37,6 @@ You can also indicate the desired version to install with a second parameter:
 
     cpm install package-to-install 1.2.2
 
+To upgrade a package to the latest version, you can run:
+
+    cpm upgrade package-to-upgrade
