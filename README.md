@@ -18,19 +18,14 @@ where your JavaScript is stored and where you want your packages to be installed
 
     cpm install package-to-install
 
-The packages will be downloaded and unzipped into a "packages" sub-directory. CPM
-will also create a "packages.js" script that can be used to configure your module loader.
-For example, with RequireJS you can load a module from a package like this:
+The packages will be downloaded and unzipped into the current working directory. CPM
+will also create any top level package modules to point to package "main" modules.
+You should be able to load the modules with any AMD compliant module loader, including
+RequireJS, Dojo, or Curl. For example:
 
-    <script src="js/packages/requirejs/require.js"></script>
+    <script src="dojo/dojo .js" data-dojo-config="async: true"></script>
     <script>
-      // indicate the base URL:
-      require({baseUrl:"js"});
-      // load the packages.js configuration
-      require(["packages"],function(){
-      	// once loaded and executed, we can now use standard package/module naming:
         require(["some-package/some-module"]);
-  	  });
     </script>
     
 You can also indicate the desired version to install with a second parameter:
