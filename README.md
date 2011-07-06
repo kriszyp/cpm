@@ -9,7 +9,8 @@ and will install all dependencies listed in the dependencies or mappings hash.
 Download and unzip/untar CPM. Then edit the startup script (cpm for unix or cpm.bat
 for windows) to point to the path where you have put CPM, and copy the script into
 a directory in your path (like /usr/local/bin in unix or C:\windows in windows). You
-can also modify the registry URL in the startup script as well.
+can also modify the registry URL in the startup script as well. The startup script also
+includes directions (in the comments) for running from Node instead of Rhino.
 
 # Usage
 
@@ -35,3 +36,4 @@ You can also indicate the desired version to install with a second parameter:
 To upgrade a package to the latest version, you can run:
 
     cpm upgrade package-to-upgrade
+
