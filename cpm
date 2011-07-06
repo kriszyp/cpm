@@ -1,4 +1,9 @@
 #!/bin/bash
+# Set the path to you CPM directory here:
 export CPM_PATH=.
+# You can point to an alternate registry if desired:
 export CPM_REGISTRY=http://packages.dojofoundation.org/
+# You can use node instead of rhino, by uncommenting this line: 
+# node /path/to/cpm/lib/cpm.js $@
+# by default we use rhino (since the JVM is installed almost everywhere)
 java -classpath $CPM_PATH/jars/js.jar org.mozilla.javascript.tools.shell.Main -opt -1 $CPM_PATH/lib/cpm.js $@
