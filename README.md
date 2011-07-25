@@ -14,7 +14,7 @@ includes directions (in the comments) for running from Node instead of Rhino.
 
 A quick oneline install on Mac OS and Linux is:
 
-	curl https://raw.github.com/arian/cpm/master/install | sh
+	curl https://raw.github.com/kriszyp/cpm/master/install | sh
 
 # Usage
 
