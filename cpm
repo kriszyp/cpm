@@ -1,5 +1,5 @@
 #!/bin/bash
-# Set the path to you CPM directory here:
+# Set the path to your CPM directory here:
 export CPM_PATH=.
 # You can point to an alternate registry if desired:
 export CPM_REGISTRY=http://packages.dojofoundation.org/
