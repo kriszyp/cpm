@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+URL="https://github.com/kriszyp/cpm/tarball/v0.1.3"
+BIN="/usr/local/bin"
+LIB="/usr/local/lib"
+
+rm -rf "/tmp/cpm"
+mkdir "/tmp/cpm"
+
+cd "/tmp/cpm"
+
+curl -L $URL > cpm.tar.gz
+
+gunzip cpm.tar.gz
+tar -xf cpm.tar
+
+folder=`ls -d */`
+
+rm -rf "${LIB}/cpm"
+mv -f $folder "${LIB}/cpm"
+sed -i 's/CPM_PATH=\./CPM_PATH=\/usr\/local\/lib\/cpm/' "${LIB}/cpm/cpm"
+ln -fs "${LIB}/cpm/cpm" "${BIN}/cpm"
+chmod +x "${BIN}/cpm"
