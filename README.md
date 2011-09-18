@@ -40,3 +40,11 @@ You can also indicate the desired version to install with a second parameter:
 To upgrade a package to the latest version, you can run:
 
     cpm upgrade package-to-upgrade
+
+To specify a directory to install packages to, you can run:
+
+    cpm --packages-path=~/Projects/my_project/libs install package-to-install
+
+To specify a different registry to install packages from, you can run:
+
+    cpm --registry=http://url.to.registry.com install package-to-install
