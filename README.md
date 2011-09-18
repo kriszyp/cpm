@@ -12,7 +12,7 @@ a directory in your path (like /usr/local/bin in unix or C:\windows in windows).
 can also modify the registry URL in the startup script as well. The startup script also
 includes directions (in the comments) for running from Node instead of Rhino.
 
-A quick oneline install on Mac OS and Linux is:
+A quick one-line install on Mac OS and Linux is:
 
 	curl https://raw.github.com/kriszyp/cpm/master/install | sh
 
