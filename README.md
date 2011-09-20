@@ -16,6 +16,11 @@ A quick one-line install on Mac OS and Linux is:
 
 	curl https://raw.github.com/kriszyp/cpm/master/install | sh
 
+To install to a different location, you can use CPM_INSTALL_LIB for the directory where
+to put cpm's directory and CPM_INSTALL_BIN for the directory to symlink the cpm script:
+
+    curl https://raw.github.com/kriszyp/cpm/master/install | CPM_INSTALL_LIB=~/lib/cpm CPM_INSTALL_BIN=~/bin sh
+
 # Usage
 
 The main use of CPM is to install packages. To install a package, go to the directory
