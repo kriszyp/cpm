@@ -21,6 +21,8 @@ to put cpm's directory and CPM_INSTALL_BIN for the directory to symlink the cpm 
 
     curl https://raw.github.com/kriszyp/cpm/master/install | CPM_INSTALL_LIB=~/lib CPM_INSTALL_BIN=~/bin sh
 
+This would install cpm's libraries in "~/lib/cpm" and symlink the cpm script to "~/bin/cpm".
+
 # Usage
 
 The main use of CPM is to install packages. To install a package, go to the directory
