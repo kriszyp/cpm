@@ -48,3 +48,9 @@ To specify a directory to install packages to, you can run:
 To specify a different registry to install packages from, you can run:
 
     cpm --registry=http://url.to.registry.com install package-to-install
+
+Licensing
+--------
+
+CPM is licensed under the AFL or BSD license. It is administered under the Dojo foundation,
+and all contributions require a Dojo CLA.
