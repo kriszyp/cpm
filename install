@@ -1,23 +1,35 @@
 #!/usr/bin/env sh
 
-URL="https://github.com/kriszyp/cpm/tarball/v0.1.4"
-BIN="/usr/local/bin"
-LIB="/usr/local/lib"
+URL="https://github.com/kriszyp/cpm/tarball/master"
+
+if [ -z "$CPM_INSTALL_LIB" ]; then
+	CPM_INSTALL_LIB="/usr/local/lib"
+fi
+if [ -z "$CPM_INSTALL_BIN" ]; then
+	CPM_INSTALL_BIN="/usr/local/bin"
+fi
 
 rm -rf "/tmp/cpm"
-mkdir "/tmp/cpm"
+mkdir -p "/tmp/cpm/archive"
 
 cd "/tmp/cpm"
 
 curl -kL $URL > cpm.tar.gz
 
-gunzip cpm.tar.gz
-tar -xf cpm.tar
+# ungzip and untar, stripping base directory and
+# putting everything into "archive" directory
+tar xzf cpm.tar.gz --strip-components=1 -C archive
 
-folder=`ls -d */`
+if [ -e "$CPM_INSTALL_LIB/cpm" ]; then
+	rm -rf "$CPM_INSTALL_LIB/cpm"
+fi
+mv -f "archive" "$CPM_INSTALL_LIB/cpm"
 
-rm -rf "${LIB}/cpm"
-mv -f $folder "${LIB}/cpm"
-sed -i 's/CPM_PATH=\./CPM_PATH=\/usr\/local\/lib\/cpm/' "${LIB}/cpm/cpm"
-ln -fs "${LIB}/cpm/cpm" "${BIN}/cpm"
-chmod +x "${BIN}/cpm"
+# if the file exists (whether it's an actual file or
+# a symlink, remove it because `ln` won't replace it
+if [ -e "$CPM_INSTALL_BIN/cpm" ]; then
+	rm "$CPM_INSTALL_BIN/cpm"
+fi
+
+chmod +x "$CPM_INSTALL_LIB/cpm/cpm"
+ln -fs "$CPM_INSTALL_LIB/cpm/cpm" "$CPM_INSTALL_BIN/cpm"
