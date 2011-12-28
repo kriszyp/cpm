@@ -10,7 +10,7 @@ fi
 
 if [ -z "$CPM_PATH" ]; then
 	# Set the path to your CPM directory here:
-	CPM_PATH="$(dirname "$(readlink -f $0)")"
+	CPM_PATH=$(cd "$(dirname "$0")"; pwd)
 fi
 
 if [ -z "$CPM_REGISTRY" ]; then
