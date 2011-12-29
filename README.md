@@ -22,6 +22,11 @@ to put cpm's directory and CPM_INSTALL_BIN for the directory to symlink the cpm 
     curl https://raw.github.com/kriszyp/cpm/master/install | CPM_INSTALL_LIB=~/lib CPM_INSTALL_BIN=~/bin sh
 
 This would install cpm's libraries in "~/lib/cpm" and symlink the cpm script to "~/bin/cpm".
+Make sure that your ~/lib directory exists before doing this.
+
+If you are running on Mac OS, then you will probably need to edit the cpm script (the one
+that "which cpm" points to) and manually set CPM_PATH to your CPM folder that holds the 
+jars and lib directory.  
 
 # Usage
 
