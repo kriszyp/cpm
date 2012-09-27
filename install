@@ -5,8 +5,14 @@ URL="https://github.com/kriszyp/cpm/tarball/master"
 if [ -z "$CPM_INSTALL_LIB" ]; then
 	CPM_INSTALL_LIB="/usr/local/lib"
 fi
+if [ -z "$CPM_INSTALL_LIB" ]; then
+	CPM_INSTALL_LIB="/usr/lib"
+fi
 if [ -z "$CPM_INSTALL_BIN" ]; then
 	CPM_INSTALL_BIN="/usr/local/bin"
+fi
+if [ -z "$CPM_INSTALL_BIN" ]; then
+	CPM_INSTALL_BIN="/usr/bin"
 fi
 
 rm -rf "/tmp/cpm"
